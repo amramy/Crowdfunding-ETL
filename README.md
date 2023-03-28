@@ -2,7 +2,7 @@
 
 
 ## Overview:
-Birtta and I are working for Independent Funding in which we were given a dataset about backers who have pledged to campaign projects. Our mission is to perform an ETL process on this dataset using Python, Pandas, and Jupyter Notebooks along with a data analysis using SQL queries. We also take a deeper look into "live" campaigns so Independent Funding can alert the contacts and backers of the remaining goal amounts. 
+Birtta and I are working for Independent Funding in which we were given a dataset about backers who have pledged to campaign projects. Our mission is to perform an ETL process on this dataset using Python, Pandas, and Jupyter Notebooks along with an ERD with Quick-DBD and data analysis using SQL queries. We also take a deeper look into "live" campaigns so Independent Funding can alert the contacts and backers of the remaining goal amounts. 
 
 ## Extract & Transform
 
