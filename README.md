@@ -4,6 +4,36 @@
 ## Overview:
 Birtta and I are working for Independent Funding in which we were given a dataset about backers who have pledged to campaign projects. Our mission is to perform an ETL process on this dataset using Python, Pandas, and Jupyter Notebooks along with an ERD with Quick-DBD and data analysis using SQL queries. We also take a deeper look into "live" campaigns so Independent Funding can alert the contacts and backers of the remaining goal amounts. 
 
+## The process:
+
+* Upload  backer_info.csv  into Jupyter notebook Extract_Transform_final_code.ipynb  
+* Extract data  
+	*  using Regular Expressions creating 4 columns (backer_id, cf_id, name, email)  
+		* (option to use Python Dictionary Methods… good follow up project)  
+* Transform and Clean Data   
+	* Spliting "name" column into "first_name" and "last_name"   
+	* Then drop "name" column  
+	* Reorder columns  
+	* Convert cf_id column from an object to an integer  
+* Export Data: backers.csv with utf-8 encoding and no index    
+
+
+* Create ERD and Table Schema and Load the Data  
+	* Create ERD in QuickDBD   
+	* Save diagram as crowdfundding_db_relationships.png  
+	* Update schema in PostgreSQL file crowdfunding_db_schema.sql  
+	* Create the backers table and upload backers.csv into schema  
+	* Save: crowdfunding_db_schema.sql    
+	
+* SQL Analysis  
+	* Query number of backer_counts in descending order for "cf_id" for all "live" campaigns  
+	* Query to Create new table = email_contacts_remaining_goal_amount   
+		* This contains "Live" campaigns with remaining goal amount with contact information  
+	* Export table as: email_contacts_remaining_goal_amount.csv  
+	* Query to Create new table = email_backers_remaining_goal_amount  
+		* This contains email addresses of backers, contact information, end date of campaign and remaining amount to reach goal.   
+ * Export table as: email_backers_remaining_goal_amount.csv  
+
 ## Extract & Transform
 
 * We transformed the dataset by extracting the "backer_id" numbers, the "cf_id" numbers, the "name", and "email" address for all backers. 
@@ -33,9 +63,6 @@ Birtta and I are working for Independent Funding in which we were given a datase
 * We then created a table of contact information for all "live" campaigns so we can motivate them of their goals which included a "ramaining_goal_amount" in the table. 
 * Backers also needed to be alerted of this valuable information, so we created another table with backer information that included "left_of_goal" amounts so they had a heads up how much funding was still needed. 
 
-#### Note: 
-I was confused by the instructions. Creating the "email_backers_remaining_goal_amount" table... the instructions said DESCENDING ORDER, but the directions also said to match the picture which had ASCENDING order. So, I did both.
-
 Ascending Order
 
 <img width="870" alt="email_backers_ascending" src="https://user-images.githubusercontent.com/111904266/204160848-b6ed29d0-e276-4314-9739-433bacf99100.png">
@@ -43,3 +70,20 @@ Ascending Order
 Descending Order
 
 <img width="863" alt="email_backers_descending" src="https://user-images.githubusercontent.com/111904266/204160867-238067cb-f40f-4bf0-aa64-3ec1c68430ee.png">
+
+____
+## Resources and tools used: 
+
+**Data** 
+* backer_info.csv
+
+**Tools Used**
+* Jupyter Notebook
+* Pandas
+* JSON
+* Regular Expressions
+* QuickDBD : https://www.quickdatabasediagrams.com/
+* PostgreSQL
+
+
+
